@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JV Trim</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Landing Page-->
+    <section class="landing-page">
+        <div class="logo">
+            <img src="./images/JVLogo.png" alt="">
+            <div class="subtitle">
+                <h1 >Professional Trim Works</h1>
+                <h2>Precision Craftsmanship for Every Space</h2>
+            </div>
+        </div>
+    </section>
+    
+    <!--NavBar-->
+    <section id="navbar">
+
+       <a href="#landing-page"><img src="./images/JVLogo.png" alt=""></a>
+       <a href="#about-us">ABOUT</a>
+       <a href="#services">SERVICES</a>
+       <a href="#projects">OUR WORK</a>
+       <a href="#contact">CONTACTS</a>
+       <a href="#quote">GET QUOTE</a>
+    </section>
+    <!--Content-->
+   <section class="content">
+     <!--Home Page-->
+     <section id="about-us">
+      
+    </section>
+    <!--About Us Page-->
+    <section id="about-us">
+
+    </section>
+    <!--Services Page-->
+    <section id="services">
+
+    </section>
+    <!--Projects-->
+    <section id="projects">
+
+    </section>
+
+    <!--Testimonials-->
+    <section id="testimonials">
+
+    </section>
+
+    <!--Contact Us-->
+    <section id="contact">
+
+    </section>
+    <!--Quote-->
+    <section id="quote">
+
+    </section>
+    <!--Footer-->
+    <section id="footer">
+
+    </section>
+   </section>
+
+   <!--JavaScript-->
+   <script>
+    window.onscroll = function() {myFunction()};
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction(){
+        if(window.pageYOffset >= sticky){
+            navbar.classList.add("sticky")
+        }
+        else{
+            navbar.classList.remove("sticky");
+        }
+    }
+   </script>
+</body>
+</html>
