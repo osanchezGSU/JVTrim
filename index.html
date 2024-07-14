@@ -25,22 +25,29 @@
     <section id="navbar">
 
        <a href="#landing-page"><img src="./images/JVLogo.png" alt=""></a>
-       <a href="#about-us">ABOUT</a>
-       <a href="#services">SERVICES</a>
-       <a href="#projects">OUR WORK</a>
-       <a href="#contact">CONTACTS</a>
-       <a href="#quote">GET QUOTE</a>
+       <a href="#about-us" class = "nav-link-grow-up">ABOUT</a>
+       <a href="#services" class = "nav-link-grow-up">SERVICES</a>
+       <a href="#projects" class = "nav-link-grow-up">OUR WORK</a>
+       <a href="#contact" class = "nav-link-grow-up">CONTACTS</a>
+       <a href="#quote" class = "nav-link-grow-up">GET QUOTE</a>
     </section>
     <!--Content-->
    <section class="content">
      <!--Home Page-->
      <section id="about-us">
+        <div class="container">
+            <div class="about-us-content">
+                <h1 class="title"><span>About</span> Us</h1>
+                <p>At JV Trim, we take pride in our team of highly qualified carpenters dedicated to achieving the highest level of customer satisfaction. Our experts are ready to design and assemble solutions tailored to your needs. Based in Georgia, we proudly service Metro Atlanta and the surrounding areas.</p>
+            </div>
+           <div class="about-us-content">
+            <h1 class="title">Why Choose Us?</h1>
+            <p></p>
+        </div>
+        </div>
       
     </section>
-    <!--About Us Page-->
-    <section id="about-us">
-
-    </section>
+   
     <!--Services Page-->
     <section id="services">
 
@@ -71,19 +78,33 @@
 
    <!--JavaScript-->
    <script>
-    window.onscroll = function() {myFunction()};
+    window.onscroll = function() {
+    handleStickyNavbar();
+    handleActiveState();
+};
 
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+var about = document.getElementById("about-us");
+var aboutUs = about.offsetTop;
 
-    function myFunction(){
-        if(window.pageYOffset >= sticky){
-            navbar.classList.add("sticky")
-        }
-        else{
-            navbar.classList.remove("sticky");
-        }
+function handleStickyNavbar() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky");
+    } else {
+        navbar.classList.remove("sticky");
     }
+}
+
+function handleActiveState() {
+    if (window.pageYOffset >= aboutUs - navbar.offsetHeight) {
+        navbar.classList.add("active");
+    } else {
+        navbar.classList.remove("active");
+    }
+}
+    
+   
    </script>
 </body>
 </html>
