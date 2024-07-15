@@ -1,6 +1,7 @@
 body{
-    background: white;
-    color: #112A46;
+    background: #dfdcdc;
+    
+    color: black;
     margin: 0;
     font-family: Roboto, sans-serif;
    
@@ -59,7 +60,7 @@ body{
     background-color: rgb(0,0,0);
     background-color: rgb(0,0,0, 0.92);
     box-sizing: border-box; 
-    
+    z-index: 99;
   
 }
 a img{
@@ -92,6 +93,11 @@ a img{
 
 }
 
+#navbar a:active{
+    font-size: 1.3rem;
+
+}
+
 .nav-link-grow-up::before {
     width: 0%;
 
@@ -102,6 +108,7 @@ a img{
    height: 100%
     
   }
+
 
 
 .subtitle{
@@ -132,13 +139,19 @@ a img{
 .sticky + .content{
     padding-top: 100px;
 }
+
+.about-us{
+    height: 100vh;
+}
+
 .about-us-content{
     padding: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #EDEDED;
+    background-color: #dfdcdc;
+    
    
 }
 .title{
@@ -150,8 +163,53 @@ a img{
     font-weight: 900;
 }
 .about-us-content p{
+    font-family: "Playfair Display";
     font-size: 2rem;
-    font-weight: 500px;
+    text-indent: 40px;
+}
+.why-choose-us .title{
+
+    margin-top: 0px;
+}
+.why-choose-us{
+    background-color: black;
+    color: #EDEDED;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 50px 0px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+span.choose-us{
+    color: #90EE90;
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 500;
+}
+.why-choose-us-container{
+    display: flex;
+    padding: 0px 20px;
+    justify-content:space-between;
+    text-align:left;
+    gap: 20px;
+    
 }
 
+.why-choose-us-card{
+    background-color: 	#343434;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+    transition: transform 0.3s ease-in-out;
+    
+}
+.card-title img{
+    width: 25px;
+}
 
+.why-choose-us-card:hover {
+    transform: scale(1.1);
+}
