@@ -1,18 +1,17 @@
 body{
+   
     background: #dfdcdc;
-    
     color: black;
     margin: 0;
     font-family: Roboto, sans-serif;
-   
-    
+   height: 100vh;;
 }
 .landing-page {
+
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    
     position: relative;
     background-attachment: fixed;
     background-position: center;
@@ -109,6 +108,15 @@ a img{
     
   }
 
+  .active::before{
+    width: 100%;
+   height: 100%;
+  
+  }
+
+ 
+
+
 
 
 .subtitle{
@@ -142,6 +150,7 @@ a img{
 
 .about-us{
     height: 100vh;
+ 
 }
 
 .about-us-content{
@@ -157,7 +166,7 @@ a img{
 .title{
     font-size: 3rem;
 }
-.title span{
+.title > span{
     font-size: 4rem;
     text-decoration: underline;
     font-weight: 900;
@@ -178,33 +187,39 @@ a img{
     margin: 10px;
     border-radius: 10px;
     padding: 50px 0px;
+   
 }
-.container{
+.container-1{
     display: flex;
     flex-direction: column;
 }
-span.choose-us{
+span.choose-us, span.project{
     color: #90EE90;
     text-decoration: none;
     font-size: 3rem;
     font-weight: 500;
 }
-.why-choose-us-container{
+.why-choose-us-container {
     display: flex;
-    padding: 0px 20px;
-    justify-content:space-between;
-    text-align:left;
+    padding: 0 20px;
+    justify-content: center;
+    text-align: left;
     gap: 20px;
-    
+    width: 90vw;
+    margin: 0 auto; /* Center the container */
+    flex-wrap: wrap; /* Ensure items wrap on smaller screens */
 }
 
-.why-choose-us-card{
-    background-color: 	#343434;
+.why-choose-us-card {
+    background-color: #343434;
+    color: #ffffff; /* Ensure text color contrasts with background */
     padding: 20px;
     border-radius: 10px;
-    width: 40%;
     transition: transform 0.5s ease-in-out;
-    
+    flex: 1; /* Make cards flexible */
+    min-width: 250px; /* Ensure cards don't get too small */
+    flex: 1 1 calc(25% - 20px);/* Responsive width for up to 3 cards per row */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 .card-title img{
     width: 25px;
@@ -212,12 +227,11 @@ span.choose-us{
 
 .why-choose-us-card:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 #services{
-
-
-    padding: 100px 10px 0px 10px;
+    padding: 100px 10px 150px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -233,11 +247,30 @@ span.choose-us{
     perspective: 800px;
 
 }
+
+
 .service-card-container:hover > .card{
     cursor: pointer;
     transform: rotateY(180deg);
 
 }
+
+@media (max-width: 900px) {
+    .service-card-container:hover > .card {
+        cursor: default;
+        transform: none;
+    }
+    
+    .service-card-container > .card {
+        cursor: pointer;
+        transition: transform 1500ms;
+    }
+
+    .service-card-container > .card.is-flipped {
+        transform: rotateY(180deg);
+    }
+}
+
 .card{
     position: relative;
     transition: transform 1500ms;
@@ -302,20 +335,54 @@ span.choose-us{
 .back > ul{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
+}
 
+#projects >  h1{
+    text-align: center;
 }
 
 #projects{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin: 100px 10px 100px 10px;
-    border-radius: 10px;
+    color: white;
+    background-color: black;
+    padding-top: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;;
+    height: 100vh;
 }
 
 
 
+.projects-container {
+    border-radius: 10px;
+    height: 60vh; /* This sets the container height to 60% of the viewport height */
+    background: #dfdcdc;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel {
+    height: 100%; /* This makes the carousel take the full height of the parent container */
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-item {
+    height: 100%; /* This ensures the item takes the full height of the carousel */
+    width: 100%; /* Adjust width as needed */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}

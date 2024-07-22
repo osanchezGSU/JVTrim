@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JV Trim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +28,8 @@
     <!--NavBar-->
     <section id="navbar">
 
-       <a href="#landing-page"><img src="./images/JVLogo.png" alt=""></a>
-       <a href="#about-us" class = "nav-link-grow-up">ABOUT</a>
+       <a href="#"><img src="./images/JVLogo.png" alt=""></a>
+       <a href="#about-us" class = "nav-link-grow-up active">ABOUT</a>
        <a href="#services" class = "nav-link-grow-up">SERVICES</a>
        <a href="#projects" class = "nav-link-grow-up">OUR WORK</a>
        <a href="#contact" class = "nav-link-grow-up">CONTACTS</a>
@@ -38,7 +39,7 @@
    <section class="content">
      <!--Home Page-->
      <section id="about-us">
-        <div class="container">
+        <div class="container-1">
             <div class="about-us-content">
                 <h1 class="title"><span>About</span> Us</h1>
                 <p>At JV Trim, we are proud to be a Georgia-based company specializing in premium trim work and carpentry services. Our dedicated team of highly skilled carpenters brings years of experience and a commitment to excellence to every project. Serving Metro Atlanta and its surrounding counties, we take pride in delivering top-notch craftsmanship and personalized solutions tailored to our clients' unique needs.
@@ -141,18 +142,42 @@
     </section>
     <!--Projects-->
     <section id="projects">
-      <h1 class="title">Our <span>Work</span></h1>
+      <h1 class="title">Our <span class="project"> Work </span> Gallery</h1>
       <div class="projects-container">
-        <div class="projects-card"><img src="" alt=""></div>
-        <div class="projects-card"><img src="" alt=""></div>      </div>
-        <div class="projects-card"><img src="" alt=""></div>      </div>
-        <div class="projects-card"><img src="" alt=""></div>      </div>
-        <div class="projects-card"><img src="" alt=""></div>      </div>
-        <div class="projects-card"><img src="" alt=""></div>      </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+           
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="2500">
+                <img src="./images/image1.jpeg" class="d-block w-100 carousel-img" alt="...">
+              </div>
+              <div class="carousel-item active" data-bs-interval="2500">
+                <img src="./images/image2.jpeg" class="d-block w-100 carousel-img" alt="...">
+              </div>
+              <div class="carousel-item active" data-bs-interval="2500">
+                <img src="./images/custom-carpentry-image.jpg" class="d-block w-100 carousel-img" alt="...">
+              </div>
+              <div class="carousel-item active" data-bs-interval="2500">
+                <img src="./images/image3.jpeg" class="d-block w-100 carousel-img" alt="...">
+              </div>
+              <div class="carousel-item active" data-bs-interval="2500">
+                <img src="./images/interior-trim-image.jpg" class="d-block w-100 carousel-img" alt="...">
+              </div>
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
-        <div class="projects-card"><img src="" alt=""></div>      </div>
-
-      
+       
+        
+            
+     </div>
     </section>
 
     <!--Testimonials-->
@@ -174,35 +199,10 @@
     </section>
    </section>
 
+   <!--Bootstrap JS-->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
    <!--JavaScript-->
-   <script>
-    window.onscroll = function() {
-    handleStickyNavbar();
-    handleActiveState();
-};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-var about = document.getElementById("about-us");
-var aboutUs = about.offsetTop;
-
-function handleStickyNavbar() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky");
-    } else {
-        navbar.classList.remove("sticky");
-    }
-}
-
-function handleActiveState() {
-    if (window.pageYOffset >= aboutUs - navbar.offsetHeight) {
-        navbar.classList.add("active");
-    } else {
-        navbar.classList.remove("active");
-    }
-}
-    
+   <script src="./index.js"></script>
    
-   </script>
 </body>
 </html>
