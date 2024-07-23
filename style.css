@@ -62,12 +62,23 @@ body{
     z-index: 99;
   
 }
+.navbar-items{
+    margin:0;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-items > li{
+    list-style-type: none;
+    text-align: center;
+}
 a img{
     margin: 0;
     height: 100px;
     
 }
-#navbar a{
+#navbar a, #navbar > div{
     color: #EDEDED;
     display: flex;
     justify-content: center;
@@ -85,7 +96,7 @@ a img{
     content: "";
     position: absolute;
     background-color: white;
-    top: 105px;
+    top: 69px;
   }
 #navbar a:hover{
     opacity: 1;
@@ -255,11 +266,19 @@ span.choose-us, span.project{
 
 }
 
+@media(max-width: 1022px){
+    .navbar-items{
+        display: none;;
+    }
+}
+
 @media (max-width: 900px) {
+  
     .service-card-container:hover > .card {
         cursor: default;
         transform: none;
     }
+
     
     .service-card-container > .card {
         cursor: pointer;
@@ -269,6 +288,7 @@ span.choose-us, span.project{
     .service-card-container > .card.is-flipped {
         transform: rotateY(180deg);
     }
+
 }
 
 .card{
@@ -349,6 +369,7 @@ span.choose-us, span.project{
     margin-right: 10px;
     border-radius: 10px;;
     height: 100vh;
+ 
 }
 
 
@@ -363,6 +384,7 @@ span.choose-us, span.project{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+   
 }
 
 .carousel {
