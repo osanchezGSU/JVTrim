@@ -2,6 +2,9 @@ window.onscroll = function() {
     handleStickyNavbar();
   
 };
+const toggleBtn = document.querySelector('.toggle_btn')
+const toggleBtnIcn = document.querySelector('.toggle_btn i')
+const dropDownMenu = document.querySelector('.dropdown')
 
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
@@ -9,8 +12,12 @@ var sticky = navbar.offsetTop;
 function handleStickyNavbar() {
     if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky");
+        dropDownMenu.classList.add("sticky-dropdown");
+        
     } else {
         navbar.classList.remove("sticky");
+        dropDownMenu.classList.remove("sticky-dropdown");
+        
     }
 }
 
@@ -27,12 +34,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-const toggleBtn = document.querySelector('.toggle_btn')
-const toggleBtnIcn = document.querySelector('.toggle_btn i')
-const dorpDownMenu = document.querySelector('.dropdown')
+
 toggleBtn.onclick = function() {
-    dorpDownMenu.classList.toggle('open')
-    const isOpen = dorpDownMenu.classList.contains('open')
+    dropDownMenu.classList.toggle('open')
+    const isOpen = dropDownMenu.classList.contains('open')
  
 
     toggleBtnIcn.classList = isOpen

@@ -8,7 +8,7 @@ body{
     color: black;
     margin: 0;
     font-family: Roboto, sans-serif;
-   height: 100vh;;
+    height: 100vh;;
 }
 .landing-page {
 
@@ -51,6 +51,7 @@ body{
     text-align: center;
     margin: 0;
     height: 70%;
+    
    
 
 }
@@ -67,6 +68,7 @@ body{
 
   
 }
+
 
 .navbar-items{
     margin:0;
@@ -154,7 +156,8 @@ a img{
     margin: 0;
 }
 
-.sticky{
+
+#navbar.sticky{
     position: fixed;
     top: 0;
     width: 100%;
@@ -275,10 +278,7 @@ span.choose-us, span.project{
 
 .dropdown{
     display: none;
-    z-index: 999;
-    position: fixed;
-    top: 120px; /* Adjust based on the height of the navbar */
-    right: 100px;
+    z-index: 99;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(15px);
     text-align: center;
@@ -286,27 +286,42 @@ span.choose-us, span.project{
     border-radius: 10px;
     width: 200px;
     transition: max-height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-   
     overflow: hidden;
-    
+    position: absolute;
+    right: 100px;
+}
+
+
+
+.dropdown.sticky-dropdown{
+    position: fixed;
+    top: 120px;
 
 }
 
-.dropdown.open {
-    display: flex;
-    flex-direction: column;
+.toggle_btn:hover{
+    cursor: pointer;
+    opacity: 1;
 }
+
+
 
 .dropdown li{
     list-style: none;
     display: flex;
     flex-direction: column;
     
-    
+}
+.dropdown li a:hover{
+    opacity: 1;
+}
+.dropdown li a:active{
+    opacity: 1;
 }
 .dropdown li a{
     text-decoration: none;
-    color: #EDEDED
+    color: #EDEDED;
+    opacity: 0.5;
 }
 .toggle_btn i {
     position: absolute;
@@ -334,12 +349,6 @@ span.choose-us, span.project{
   }
 
 
-@media(max-width: 1022px){
-    .navbar-items{
-        display: none;;
-    }
-}
-
 @media (max-width: 900px) {
   
     .service-card-container:hover > .card {
@@ -361,6 +370,15 @@ span.choose-us, span.project{
     visibility: visible;
     font-size: 2rem;
     }
+    .navbar-items{
+        display: none;;
+    }
+    .dropdown.open {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
 
 }
 
