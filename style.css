@@ -378,6 +378,15 @@ span.choose-us, span.project{
         flex-direction: column;
         gap: 10px;
     }
+    .service-container{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .service-card-container{
+        width: 50%;
+    }
 
 
 }
