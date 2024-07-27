@@ -210,22 +210,106 @@
             
      </div>
     </section>
-
-    <!--Testimonials-->
-    <section id="testimonials">
-
-    </section>
-
     <!--Contact Us-->
     <section id="contact">
+      <h1 class="title">Get In <span>Touch</span></h1>
+      <div class="contact-wrapper">
+        
+        <div class="contact-message">
+          <p>We're here to answer any questions you have about our services. Whether you need a quote, have a project in mind, or just want to learn more, we'd love to hear from you. Reach out to us and let's create something amazing together!</p>
+        </div>
+        
+        <div class="contact-info-wrapper">
+          <div class="phone-wrapper">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:4706633510">(470) 663 - 3510</a>
+          </div>
+          <div class="phone-wrapper">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:contact@jvtrim.com">Contact@JVTrim.com</a>
+          </div>
+          
+          <div class="social-media-wrapper">
+            <a href = "https://www.facebook.com/people/Jv-Trim/100084963160561/" target="_blank" class="icon facebook">
+              <div class="tool-tip">Facebook</div>
+              <span><i class="fa-brands fa-facebook-f"></i></span>
+            </a>
+            <a href = "https://www.instagram.com/jvtrim/" target = "_blank" class="icon instagram">
+              <div class="tool-tip">Instagram</div>
+              <span> <i class="fa-brands fa-instagram"></i></span>
+            </a>
+            <a href = "https://www.tiktok.com/@jvtrim" target="_blank" class="icon tiktok">
+              <div class="tool-tip">TikTok</div>
+              <span><i class="fa-brands fa-tiktok"></i>
+              </span>
+            </a>
+          </div>
 
+        </div>
+      </div>
+      
     </section>
     <!--Quote-->
     <section id="quote">
 
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <h1 class = "title quote">Get A <span>Free</span> Quote </h1>
+        <!-- Replace with your Access Key -->
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+    
+        <!-- Form Inputs. Each input must have a name="" attribute -->
+        <div class="name-email">
+          <div class="mb-3">
+            <label  for="formGroupExampleInput" class="form-label">Name <span class = "span-required">*</span></label>
+            <input name = "name" type="text" class="form-control" required id="formGroupExampleInput" placeholder="Name">
+          </div>
+          <div  class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Phone Number <span class = "span-required">*</span></label>
+            <input name = "phone" type="tel" class="form-control" required id="formGroupExampleInput2" placeholder="Phone Number">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label  for="formGroupExampleInput2" class="form-label">Email <span class = "span-required">*</span></label>
+          <input name = "email" type="text" class="form-control" required id="formGroupExampleInput2" placeholder="Email">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Address</label>
+          <input name = "address" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Address">
+        </div>
+        <label for="formGroupExampleInput2" class="form-label">Description of Project <span class = "span-required">*</span></label>
+        <textarea name="project-description" class="form-control" required placeholder="Write all the details here..."></textarea>
+    
+        <!-- Honeypot Spam Protection -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+    
+        <!-- Custom Confirmation / Success Page -->
+        <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+        <div class="button-container">
+          <button type="submit" class = "submit">Submit</button>
+        </div>
+    </form>
+
     </section>
     <!--Footer-->
     <section id="footer">
+    
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <p class="col-md-4 mb-0 text-body-secondary">© 2024 Company, Inc</p>
+      
+          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img src="./images/JVLogo.png" alt="">
+          </a>
+      
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#about-us" class="nav-link px-2 text-body-secondary">About</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link px-2 text-body-secondary">Services</a></li>
+            <li class="nav-item"><a href="#projects" class="nav-link px-2 text-body-secondary">Projects</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link px-2 text-body-secondary">Contact</a></li>
+            <li class="nav-item"><a href="#quote" class="nav-link px-2 text-body-secondary">Get Quote</a></li>
+          </ul>
+        </footer>
+
 
     </section>
    </section>

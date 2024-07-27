@@ -8,7 +8,8 @@ body{
     color: black;
     margin: 0;
     font-family: Roboto, sans-serif;
-    height: 100vh;;
+    height: 100vh;
+
 }
 .landing-page {
 
@@ -191,9 +192,10 @@ a img{
     font-size: 4rem;
     text-decoration: underline;
     font-weight: 900;
+    color: #3a689c;
 }
 .about-us-content p{
-    font-family: "Playfair Display";
+    font-family: "Playfair Display", seriff;
     font-size: 2rem;
     text-indent: 40px;
 }
@@ -214,7 +216,7 @@ a img{
     display: flex;
     flex-direction: column;
 }
-span.choose-us, span.project{
+span.choose-us, span.project, .quote span {
     color: #90EE90;
     text-decoration: none;
     font-size: 3rem;
@@ -276,6 +278,10 @@ span.choose-us, span.project{
 
 }
 
+h1.title{
+    text-align: center;
+}
+
 .dropdown{
     display: none;
     z-index: 99;
@@ -321,7 +327,7 @@ span.choose-us, span.project{
 .dropdown li a{
     text-decoration: none;
     color: #EDEDED;
-    opacity: 0.5;
+    opacity: 0.75;
 }
 .toggle_btn i {
     position: absolute;
@@ -349,47 +355,6 @@ span.choose-us, span.project{
   }
 
 
-@media (max-width: 900px) {
-  
-    .service-card-container:hover > .card {
-        cursor: default;
-        transform: none;
-    }
-
-    
-    .service-card-container > .card {
-        cursor: pointer;
-        transition: transform 1500ms;
-    }
-
-    .service-card-container > .card.is-flipped {
-        transform: rotateY(180deg);
-    }
-
-    #navbar .toggle_btn {
-    visibility: visible;
-    font-size: 2rem;
-    }
-    .navbar-items{
-        display: none;;
-    }
-    .dropdown.open {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .service-container{
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-    .service-card-container{
-        width: 50%;
-    }
-
-
-}
 
 .card{
     position: relative;
@@ -508,3 +473,277 @@ span.choose-us, span.project{
     height: 100%;
     border-radius: 10px;
 }
+
+.contact-wrapper{
+    display: flex;
+    padding: 100px;
+    gap: 100px;
+
+
+}
+
+.contact-message{
+    border-radius:10px;
+    border-top: 20px solid black;
+    border-bottom: 20px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Playfair Display", seriff;
+    font-size: 2rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+
+}
+
+
+
+.contact-info-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 25vw;
+    gap: 20px;
+
+
+}
+
+.phone-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 2rem;
+    gap: 10px;
+}
+.phone-wrapper > a{
+    text-decoration: none;
+    font-size: 1.75rem;
+    color: #3a689c;
+    font-weight: 500;
+}
+
+.social-media-wrapper{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    text-decoration: none;
+    color: black;
+
+}
+
+.icon span{
+    height: 60px;
+    width: 60px;
+    display: block;
+    background: #ffffff;
+    box-shadow: 0 10px 10px rgb(0,0,0, 0.1);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+
+}
+
+.icon span i{
+    font-size: 25px;
+    line-height: 60px;
+}
+
+.tool-tip{
+    background: #ffffff;
+    font-size: 20px;
+    padding: 10px 18px;
+    box-shadow: 0 10px 10px rgb(0,0,0, 0.1);
+    border-radius: 25px;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icon:hover .tool-tip{
+    top: -70px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.icon:hover .tool-tip, .icon:hover span{
+    text-shadow: 0px -1px 0px rgb(0,0,0, 0.4);
+}
+
+.facebook:hover span,
+.facebook:hover .tool-tip,
+.facebook:hover .tool-tip::before {
+    background-color: #3B5999;
+    color: white;
+
+
+}
+.instagram:hover span,
+.instagram:hover .tool-tip
+ {
+    background-image:  linear-gradient(to bottom right, #F9CE34, #EE2A7B, #6228D7);
+    color: white;
+
+}
+.instagram:hover .tool-tip::before{
+    background-color: #c32997;
+}
+.instagram .tool-tip::before{
+    background-color: #c32997;
+}
+.instagram .tool-tip{
+    background-image:  linear-gradient(to bottom right, #F9CE34, #EE2A7B, #6228D7);
+}
+
+.tiktok:hover span,
+.tiktok:hover .tool-tip,
+.tiktok:hover .tool-tip::before {
+    background-color: black;
+    color: white;
+
+}
+
+.tool-tip::before{
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%) rotate(45deg);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: #ffffff;
+    z-index: 2;
+    text-shadow: 0px -1px 0px rgb(0,0,0, 0.4);
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 100px;
+    
+    
+    
+}
+.name-email{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.name-email > div{
+    width: 50%;
+}
+
+.email{
+
+}
+.span-required{
+    color: red
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 100%;
+}
+button.submit{
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 50%;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border-color: white;
+    
+}
+
+button.submit:hover{
+    
+    color: white    
+}
+
+footer{
+    color: white;
+    width: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgb(0,0,0, 0.92);
+}
+
+@media (max-width: 900px) {
+  
+    .service-card-container:hover > .card {
+        cursor: default;
+        transform: none;
+    }
+
+    
+    .service-card-container > .card {
+        cursor: pointer;
+        transition: transform 1500ms;
+    }
+
+    .service-card-container > .card.is-flipped {
+        transform: rotateY(180deg);
+    }
+
+    #navbar .toggle_btn {
+    visibility: visible;
+    font-size: 2rem;
+    }
+    .navbar-items{
+        display: none;;
+    }
+    .dropdown.open {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .service-container{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .service-card-container{
+        width: 50%;
+    }
+    
+    .contact-wrapper{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-info-wrapper{
+       width: 50vw;
+    }
+
+
+}
+
