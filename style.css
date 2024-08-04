@@ -53,7 +53,6 @@ body{
     margin: 0;
     height: 70%;
     
-   
 
 }
 #navbar{
@@ -107,7 +106,7 @@ a img{
     background-color: white;
     top: 69px;
   }
-#navbar a:hover{
+#navbar a:hover, #navbar a:active{
     opacity: 1;
 
 }
@@ -127,14 +126,16 @@ a img{
    height: 100%
     
   }
+  .navbar-items li a.active{
+    opacity: 1;
+  }
+  .navbar-items li .active::before{
 
-  .active::before{
     width: 100%;
-   height: 100%;
-  
+   height: 100%
   }
 
-    #navbar .toggle_btn {
+#navbar .toggle_btn {
         visibility: hidden;
   }
 
@@ -248,7 +249,7 @@ span.choose-us, span.project, .quote span {
     width: 25px;
 }
 
-.why-choose-us-card:hover {
+.why-choose-us-card:hover, .why-choose-us-card:active {
     transform: scale(1.1);
     cursor: pointer;
 }
@@ -272,7 +273,7 @@ span.choose-us, span.project, .quote span {
 }
 
 
-.service-card-container:hover > .card{
+.service-card-container:hover > .card, .service-card-container:active > .card{
     cursor: pointer;
     transform: rotateY(180deg);
 
@@ -305,7 +306,7 @@ h1.title{
 
 }
 
-.toggle_btn:hover{
+.toggle_btn:hover, .toggle_btn:active{
     cursor: pointer;
     opacity: 1;
 }
@@ -318,7 +319,7 @@ h1.title{
     flex-direction: column;
     
 }
-.dropdown li a:hover{
+.dropdown li a:hover, .dropdown li a:hover{
     opacity: 1;
 }
 .dropdown li a:active{
@@ -381,8 +382,24 @@ h1.title{
     color: white;
     position: absolute;
     backface-visibility: hidden;
+}
+
+.front{
+    flex-direction: column;
+}
+
+.front > button{
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
+    border-radius: 10px;
+    background: none;
+    backdrop-filter: blur(5px);
+    display: none;
+    border-color: white;
 
 }
+
 .interior-trim{
     background-image: url(./images/interior-trim-image.jpg);
 
@@ -410,12 +427,13 @@ h1.title{
 
 }
 .front h1{
-    font-size: 2rem;
+    position: absolute;
+    color: black;
     padding: 10px;
+    backdrop-filter: blur(5px);
+    top:25%;
     text-align: center;
-    width: 100%;
-  
-    background-color: rgb(0,0,0, 0.6);
+    background: black;
 }
 .back > ul{
     display: flex;
@@ -441,7 +459,7 @@ h1.title{
 
 .projects-container {
     border-radius: 10px;
-    height: 60vh; /* This sets the container height to 60% of the viewport height */
+    height: auto; /* This sets the container height to 60% of the viewport height */
     background: #dfdcdc;
     margin: 20px;
     padding: 20px;
@@ -453,7 +471,7 @@ h1.title{
 }
 
 .carousel {
-    height: 100%; /* This makes the carousel take the full height of the parent container */
+    height: auto; /* This makes the carousel take the full height of the parent container */
     width: 100%;
     display: flex;
     overflow: hidden;
@@ -461,7 +479,7 @@ h1.title{
 }
 
 .carousel-item {
-    height: 100%; /* This ensures the item takes the full height of the carousel */
+    height: auto; /* This ensures the item takes the full height of the carousel */
     width: 100%; /* Adjust width as needed */
     border-radius: 10px;
     overflow: hidden;
@@ -470,7 +488,7 @@ h1.title{
 .carousel-img {
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 10px;
 }
 
@@ -580,31 +598,35 @@ h1.title{
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.icon:hover .tool-tip{
+.icon:hover .tool-tip, .icon:active .tool-tip{
     top: -70px;
     opacity: 1;
     pointer-events: auto;
 }
-.icon:hover .tool-tip, .icon:hover span{
+.icon:hover .tool-tip, .icon:hover span, .icon:active .tool-tip, .icon:active span{
     text-shadow: 0px -1px 0px rgb(0,0,0, 0.4);
 }
 
 .facebook:hover span,
 .facebook:hover .tool-tip,
-.facebook:hover .tool-tip::before {
+.facebook:hover .tool-tip::before, .facebook:active span,
+.facebook:active .tool-tip,
+.facebook:active .tool-tip::before {
     background-color: #3B5999;
     color: white;
 
 
 }
 .instagram:hover span,
-.instagram:hover .tool-tip
+.instagram:hover .tool-tip,
+.instagram:active span,
+.instagram:active .tool-tip
  {
     background-image:  linear-gradient(to bottom right, #F9CE34, #EE2A7B, #6228D7);
     color: white;
 
 }
-.instagram:hover .tool-tip::before{
+.instagram:hover .tool-tip::before, .instagram:active .tool-tip::before{
     background-color: #c32997;
 }
 .instagram .tool-tip::before{
@@ -616,7 +638,10 @@ h1.title{
 
 .tiktok:hover span,
 .tiktok:hover .tool-tip,
-.tiktok:hover .tool-tip::before {
+.tiktok:hover .tool-tip::before,
+.tiktok:hover span,
+.tiktok:hover .tool-tip,
+.tiktok:hover .tool-tip::before{
     background-color: black;
     color: white;
 
@@ -685,15 +710,68 @@ button.submit{
 }
 
 button.submit:hover{
-    
-    color: white    
+    background-color: black;
+    color: white;    
 }
 
 footer{
-    color: white;
-    width: 100%;
+    padding: 0px 50px;
     background-color: rgb(0,0,0);
     background-color: rgb(0,0,0, 0.92);
+    color: white;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+   
+}
+footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer div.list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    
+}
+
+footer ul li{
+    list-style: none;
+    text-align: center;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    opacity: 0.75;
+}
+footer ul li a:hover {
+    opacity: 1;
+}
+
+footer .icon span{
+    height: 30px;
+    width: 30px;
+  
+
+}
+
+footer .icon span i{
+    font-size: 21px;
+    line-height: 30px;
 }
 
 @media (max-width: 900px) {
@@ -743,7 +821,41 @@ footer{
     .contact-info-wrapper{
        width: 50vw;
     }
+    footer{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        height: 120px;
+        
+    }
+    footer .list{
+        grid-column-start: span 2;
+    }
 
+    .list ul{
+        gap: 25px;
+    }
+    .name-email{
+        flex-direction: column;
+    }
+    .name-email > div{
+        width: 100%;
+    }
+    .front > button{
+        display: flex;
+    }
+  
+}
 
+@media (max-width: 600px){
+    .about-us-content{
+        padding: 50px;
+    }
+    .about-us-content p{
+        text-indent: 0%;
+    }
+    .logo{
+        height: 50%;
+    }
+  
 }
 

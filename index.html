@@ -31,7 +31,7 @@
        <a href="#"><img src="./images/JVLogo.png" alt=""></a>
      
         <ul class = "navbar-items">
-            <li><a href="#about-us" class = "nav-link-grow-up">ABOUT</a></li>
+            <li><a href="#about-us" class = "nav-link-grow-up active">ABOUT</a></li>
             <li><a href="#services" class = "nav-link-grow-up">SERVICES</a></li>
             <li><a href="#projects" class = "nav-link-grow-up">OUR WORK</a></li>
             <li><a href="#contact" class = "nav-link-grow-up">CONTACTS</a></li>
@@ -55,7 +55,7 @@
     <!--Content-->
    <section class="content">
      <!--Home Page-->
-     <section id="about-us">
+     <section id="about-us" class = "section">
         <div class="container-1">
             <div class="about-us-content">
                 <h1 class="title"><span>About</span> Us</h1>
@@ -101,13 +101,14 @@
     </section>
    
     <!--Services Page-->
-    <section id="services">
+    <section id="services" class = "section">
         <h1 class="title">Our <span>Services</span></h1>
         <div class="service-container">
             <div class="service-card-container">
                 <div class="card">
                     <div class="front interior-trim">
                         <h1>Interior Trim</h1>
+                        <button>Learn More</button>
                     </div>
                     <div class="back">
                         <ul>
@@ -156,7 +157,7 @@
 
     </section>
     <!--Projects-->
-    <section id="projects">
+    <section id="projects" class = "section">
       <h1 class="title">Our <span class="project"> Work </span> Gallery</h1>
       <div class="projects-container">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -211,7 +212,7 @@
      </div>
     </section>
     <!--Contact Us-->
-    <section id="contact">
+    <section id="contact" class = "section">
       <h1 class="title">Get In <span>Touch</span></h1>
       <div class="contact-wrapper">
         
@@ -292,22 +293,35 @@
     </section>
     <!--Footer-->
     <section id="footer">
-    
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <p class="col-md-4 mb-0 text-body-secondary">© 2024 Company, Inc</p>
-      
-          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <img src="./images/JVLogo.png" alt="">
-          </a>
-      
-          <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-            <li class="nav-item"><a href="#about-us" class="nav-link px-2 text-body-secondary">About</a></li>
-            <li class="nav-item"><a href="#services" class="nav-link px-2 text-body-secondary">Services</a></li>
-            <li class="nav-item"><a href="#projects" class="nav-link px-2 text-body-secondary">Projects</a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link px-2 text-body-secondary">Contact</a></li>
-            <li class="nav-item"><a href="#quote" class="nav-link px-2 text-body-secondary">Get Quote</a></li>
-          </ul>
+        <footer>
+            <div class="social-media-wrapper">
+                <a href = "https://www.facebook.com/people/Jv-Trim/100084963160561/" target="_blank" class="icon facebook" >
+                  <div class="tool-tip">Facebook</div>
+                  <span><i class="fa-brands fa-facebook-f"></i></span>
+                </a>
+                <a href = "https://www.instagram.com/jvtrim/" target = "_blank" class="icon instagram">
+                  <div class="tool-tip">Instagram</div>
+                  <span> <i class="fa-brands fa-instagram"></i></span>
+                </a>
+                <a href = "https://www.tiktok.com/@jvtrim" target="_blank" class="icon tiktok">
+                  <div class="tool-tip">TikTok</div>
+                  <span><i class="fa-brands fa-tiktok"></i>
+                  </span>
+                </a>
+              </div>
+            <div>
+                <a href="#"><img src="./images/JVLogo.png" alt="" style = "width: 100px;">
+                </a>
+            </div>
+           <div class = "list">
+            <ul>
+                <li><a href="#about-us">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Our Work</a></li>
+                <li><a href="#contact">Contacts</a></li>
+                <li><a href="#quote">Get Quote</a></li>
+            </ul>
+           </div>
         </footer>
 
 
