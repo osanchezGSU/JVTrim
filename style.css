@@ -11,49 +11,57 @@ section{
     width: 100%;
     height: 100vh;
 }
-.container{
-    max-width: 1140px;
+.grid-container{
+    max-width: 960px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 24px;
     margin: 0 auto;
 }
+.flex-container{
+    display: flex;
+}
 
 
 #landing-page{
     background: linear-gradient(0deg, rgba(34, 76, 119, 0.5), rgba(34, 76, 119, 0.5)), url(./images/home-image.jpg);
-    min-height: 100%;
+    min-height: 100vh;
     position: relative;
     background-position: center;
     background-repeat: none;
     background-size: cover;
     background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
-#landing-page div.container{
-    height: 100%;
+#landing-page div.flex-container{
+    height: 100vh;
+    max-width: 1140px;
+    margin: 0 auto;
+    flex-direction: column;
+    max-height: 708px;
     position: relative;
     gap: 0;
     background-attachment: fixed;
-}
-
-
-#landing-page .container img{
-    grid-column: span 12;
-    width: 100%;
-    height: 100%;
-    
-}
-
-#landing-page .container h1,
-#landing-page .container h2
-{
-    grid-column: span 12;
+    padding:0;
+    justify-content: center;
     text-align: center;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+}
+#landing-page div.flex-container img{
+    height: 60%;
+}
+#landing-page div.flex-container h1{
+    color: hsl(216, 33%, 97%);
+    font-size: 72px;
+}
+#landing-page div.flex-container h2{
     
 }
+
+
+
+
 
 
 
