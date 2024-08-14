@@ -1,70 +1,207 @@
-:root{
-    --primary1: hsl()
-}
+
 body{
-    width: 100%;
     padding: 0;
     margin: 0;
-    font-family: "Reddit Sans", sans-serif;
-}
-section{
     width: 100%;
     height: 100vh;
+    font-family: "Reddit Sans", sans-serif;
+    scroll-behavior: smooth;
+}
+
+section{
+    height: 100vh;
+    width: 100%;
 }
 .grid-container{
-    max-width: 960px;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
-    margin: 0 auto;
+    max-width: 320px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: auto 16px;
 }
-.flex-container{
+
+.btn{
+    border-radius: 10px;
+    background-color: hsl(178, 90%, 35%);
+    color: hsl(213, 69%, 95%);
     display: flex;
-}
-
-
-#landing-page{
-    background: linear-gradient(0deg, rgba(34, 76, 119, 0.5), rgba(34, 76, 119, 0.5)), url(./images/home-image.jpg);
-    min-height: 100vh;
-    position: relative;
-    background-position: center;
-    background-repeat: none;
-    background-size: cover;
-    background-attachment: fixed;
     justify-content: center;
     align-items: center;
-    display: flex;
+    text-decoration: none;
+ 
 }
-#landing-page div.flex-container{
-    height: 100vh;
-    max-width: 1140px;
-    margin: 0 auto;
-    flex-direction: column;
-    max-height: 708px;
+
+/*Landing Page CSS*/
+
+#landing-page{
+    background-image: url(./images/home-image.jpg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position: center;
+    background-size: 100% 100%;
     position: relative;
-    gap: 0;
-    background-attachment: fixed;
-    padding:0;
-    justify-content: center;
-    text-align: center;
-}
-#landing-page div.flex-container img{
-    height: 60%;
-}
-#landing-page div.flex-container h1{
-    color: hsl(216, 33%, 97%);
-    font-size: 72px;
-}
-#landing-page div.flex-container h2{
+   
     
 }
+#landing-page::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: hsl(210, 56%, 30%, 0.5);
+    opacity: 0;/*Change to 0 for loading animation*/
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+#landing-page.animate::before {
+    opacity: 1;
+}
 
 
 
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: auto auto;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    
+}
+.logo-container > *{
+    z-index: 2;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s;
+}
+.logo-container > *.visible,
+dotlottie-player.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+.logo-container img{
+    transform: translateY(-20px);
+}
+.logo-container h1{
+    color: hsl(216, 33%, 97%);
+    font-size: 28px;
+    transform: translateY(20px);
+}
+.logo-container h2{
+    color: hsl(210, 15%, 82%);
+    font-size: 23px;
+    transform: translateY(20px);
+}
+dotlottie-player{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s;
+}
+
+/*Nav Bar CSS*/
+nav{
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    background-color: hsl(210, 24%, 16%);
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 50px;
+
+    z-index: 10;
+    
+
+}
+nav ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+nav ul> a{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 150px;
+    color: hsl(210, 15%, 82%);
+    font-size: 32px;
+    height: 100%;
+
+}
+nav a.active{
+    color: hsl(216, 33%, 97%);
+    border-bottom: 5px solid hsl(216, 33%, 97%);
+
+
+}
+nav .btn{
+  width: 172px;
+  height: 55px;
+  font-size: 26px;
+}
 
 
 
+/*Responsive Design for Tablets and Laptops*/
+@media (min-width: 435px) and (max-width: 1024px){
+    #landing-page{
+        background-size: cover;
+    }
 
+    .logo-container{
+        max-width: 720px;
+    }
 
+    .logo-container h1{
+        font-size: 62px;
+    }
+    .logo-container h2{
+        font-size: 30px;
+    }
+    
+}
+/*Repsonsive Design for Destops*/
+@media (min-width: 1025px) {
+    #landing-page{
+        background-size: cover;
+    }
+
+    .logo-container{
+        max-width: 960px;
+    }
+
+    .logo-container h1{
+        font-size: 72px;
+    }
+    .logo-container h2{
+        font-size: 40px;
+    }
+
+    nav{
+        height: 120px; 
+    }
+
+    nav a img{
+        height: 115px
+    }
+    
+}
 
 
