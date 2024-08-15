@@ -52,7 +52,7 @@ section{
     right: 0;
     bottom: 0;
     background: hsl(210, 56%, 30%, 0.5);
-    opacity: 0;/*Change to 0 for loading animation*/
+    opacity: 1;/*Change to 0 for loading animation*/
     transition: opacity 1s ease-in-out;
     z-index: 1;
 }
@@ -71,13 +71,14 @@ section{
     height: 100%;
     justify-content: center;
     text-align: center;
+    gap:0;
     
 }
 .logo-container > *{
     z-index: 2;
     padding: 0;
     margin: 0;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s;
 }
 .logo-container > *.visible,
@@ -98,6 +99,7 @@ dotlottie-player.visible{
     font-size: 23px;
     transform: translateY(20px);
 }
+
 dotlottie-player{
     width: 50px;
     height: 50px;
@@ -105,31 +107,37 @@ dotlottie-player{
     bottom: 20px;
     right: 20px;
     z-index: 2;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s;
 }
 
-/*Nav Bar CSS*/
+/* Nav Bar CSS */
 nav{
     position: sticky;
-    bottom: 0;
+    top: 0;
     display: flex;
     width: 100%;
     background-color: hsl(210, 24%, 16%);
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 0px 50px;
-
+    padding: 0px 16px;
     z-index: 10;
-    
+    height: 60px;
 
 }
+
+nav a img{
+    height: 50px
+}
+
 nav ul{
     height: 100%;
-    display: flex;
+
     justify-content: center;
     align-items: center;
+ 
+     display: none;
  
 }
 
@@ -155,8 +163,43 @@ nav .btn{
   width: 172px;
   height: 55px;
   font-size: 26px;
+  display: none;
 }
 
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .content{
+    padding-top: 60px;
+}
+
+.ham-btn{
+    width: 50px;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.ham-btn div{
+    width: 100%;
+    height: 5px;
+    border-radius: 25px;
+    position: absolute;
+    background: hsl(216, 33%, 97%);
+    top: 50%;
+    
+}
+
+.ham-btn div:nth-child(1){
+ top: 25%;  
+}
+.ham-btn div:nth-child(3){
+    top: 75%;  
+   }
 
 
 /*Responsive Design for Tablets and Laptops*/
@@ -175,10 +218,29 @@ nav .btn{
     .logo-container h2{
         font-size: 30px;
     }
+
+     /* Nav Bar CSS */
+     nav{
+        height: 120px; 
+        padding: 0px 50px;
+    }
+    nav ul, 
+    nav .btn
+    {
+        display: flex;
+    }
+
+    nav a img{
+        height: 115px;
+    }
+    .sticky + .content{
+        padding-top: 120px;
+    }
     
 }
 /*Repsonsive Design for Destops*/
 @media (min-width: 1025px) {
+    /* Landing Page CSS */
     #landing-page{
         background-size: cover;
     }
@@ -194,12 +256,23 @@ nav .btn{
         font-size: 40px;
     }
 
+
+    /* Nav Bar CSS */
     nav{
         height: 120px; 
+        padding: 0px 50px;
+    }
+    nav ul, 
+    nav .btn
+    {
+        display: flex;
     }
 
     nav a img{
-        height: 115px
+        height: 115px;
+    }
+    .sticky + .content{
+        padding-top: 120px;
     }
     
 }
