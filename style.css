@@ -6,18 +6,22 @@ body{
     height: 100vh;
     font-family: "Reddit Sans", sans-serif;
     scroll-behavior: smooth;
+    
 }
 
 section{
     height: 100vh;
     width: 100%;
+    box-sizing: border-box;
 }
 .grid-container{
     display: grid;
-    max-width: 320px;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    margin: auto 16px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    height: fit-content
+    
 }
 
 .btn{
@@ -52,7 +56,7 @@ section{
     right: 0;
     bottom: 0;
     background: hsl(210, 56%, 30%, 0.5);
-    opacity: 1;/*Change to 0 for loading animation*/
+    opacity: 0;/*Change to 0 for loading animation*/
     transition: opacity 1s ease-in-out;
     z-index: 1;
 }
@@ -71,14 +75,13 @@ section{
     height: 100%;
     justify-content: center;
     text-align: center;
-    gap:0;
     
 }
 .logo-container > *{
     z-index: 2;
     padding: 0;
     margin: 0;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s;
 }
 .logo-container > *.visible,
@@ -99,7 +102,6 @@ dotlottie-player.visible{
     font-size: 23px;
     transform: translateY(20px);
 }
-
 dotlottie-player{
     width: 50px;
     height: 50px;
@@ -107,11 +109,11 @@ dotlottie-player{
     bottom: 20px;
     right: 20px;
     z-index: 2;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s;
 }
 
-/* Nav Bar CSS */
+/*Nav Bar CSS*/
 nav{
     position: sticky;
     top: 0;
@@ -124,19 +126,17 @@ nav{
     padding: 0px 16px;
     z-index: 10;
     height: 60px;
-
+    
 }
 
 nav a img{
-    height: 50px
+    height: 50px;
 }
 
 nav ul{
     height: 100%;
-
     justify-content: center;
     align-items: center;
- 
      display: none;
  
 }
@@ -166,41 +166,185 @@ nav .btn{
   display: none;
 }
 
-.sticky{
+
+
+nav.sticky{
     position: fixed;
     top: 0;
     width: 100%;
 }
 
-.sticky + .content{
+nav.sticky + .content{
     padding-top: 60px;
 }
 
 .ham-btn{
-    width: 50px;
-    height: 100%;
     position: relative;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    width: 30px;
+    height: 45px;
+    cursor: pointer
 }
+
 .ham-btn div{
+    position: absolute;
+    box-sizing: border-box;
     width: 100%;
     height: 5px;
     border-radius: 25px;
-    position: absolute;
-    background: hsl(216, 33%, 97%);
+    background-color: hsl(216, 33%, 97%);
     top: 50%;
-    
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s transform ease-in-out, .3s opacity ease-in-out;
 }
 
 .ham-btn div:nth-child(1){
- top: 25%;  
+    top: 25%;
 }
+.ham-btn div:nth-child(2){
+    
+}
+
 .ham-btn div:nth-child(3){
-    top: 75%;  
-   }
-   
+    top: 75%
+}
+
+.ham-btn.active div:nth-child(1){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-btn.active div:nth-child(2){
+    opacity: 0;
+}
+
+.ham-btn.active div:nth-child(3){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg); 
+
+}
+.content{
+    position: relative;
+}
+.content > section{
+    padding-top: 50px;
+}
+
+
+.dropdown-menu{
+    
+    width: 100%;
+    flex-direction: column;
+    height: 100vh;
+    background-color: hsl(210, 24%, 16%);
+    justify-content: space-around;   
+    align-items: center;
+    clip-path: circle(100px at 90% -20%);
+    transition: all 1s ease-in-out;
+    z-index: 10;
+    display: flex;
+    position: absolute;
+    
+}
+.dropdown-menu.open{
+
+    clip-path: circle(300vh at 90% -20%);
+
+}
+.dropdown-menu ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    
+}
+
+.dropdown-menu ul > a{
+    text-decoration: none;
+    color: hsl(210, 15%, 82%);
+    font-size: 32px;
+}
+
+.dropdown-menu .btn{
+    width: 172px;
+    height: 55px;
+    font-size: 26px;
+}
+
+.dropdown-menu.sticky{
+    position: fixed;
+    top: 60px;
+    
+}
+.section-header{
+    grid-column: span 4;
+    color: hsl(210, 24%, 16%);
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+.service-type{
+    grid-column: span 4;
+    color: hsl(211, 58%, 16%);
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: fit-content;
+}
+
+.service-card-container{
+    grid-column: span 4;
+    display: flex;
+    overflow-x: scroll;
+    gap: 10px;
+ 
+
+}
+
+.service-card{
+    background-color: hsl(214, 15%, 91%);
+    min-width: 100%;
+    border-radius: 10PX;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 350px;
+ 
+
+
+
+}
+
+.service-card div h3{
+    color: hsl(211, 58%, 16%);
+    font-size: 32px;
+    padding: 0;
+    margin: 0;
+}
+.service-card div p{
+    color: hsl(210, 24%, 16%);
+    font-size: 18px;
+    padding-top: 0;
+    margin-top: 0;
+}
+.service-card > a{
+    text-decoration: none;
+    color: hsl(178, 90%, 35%);
+    font-size: 23px;
+}
+
+
+
 
 
 /*Responsive Design for Tablets and Laptops*/
@@ -221,27 +365,11 @@ nav .btn{
     }
 
      /* Nav Bar CSS */
-     nav{
-        height: 120px; 
-        padding: 0px 50px;
-    }
-    nav ul, 
-    nav .btn
-    {
-        display: flex;
-    }
-
-    nav a img{
-        height: 115px;
-    }
-    .sticky + .content{
-        padding-top: 120px;
-    }
+    
     
 }
 /*Repsonsive Design for Destops*/
 @media (min-width: 1025px) {
-    /* Landing Page CSS */
     #landing-page{
         background-size: cover;
     }
@@ -257,8 +385,6 @@ nav .btn{
         font-size: 40px;
     }
 
-
-    /* Nav Bar CSS */
     nav{
         height: 120px; 
         padding: 0px 50px;
@@ -274,6 +400,12 @@ nav .btn{
     }
     .sticky + .content{
         padding-top: 120px;
+    }
+    .ham-btn{
+        display: none;
+    }
+    .dropdown-menu{
+        display: none;
     }
     
 }
