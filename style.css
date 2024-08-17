@@ -26,6 +26,7 @@ body{
     height: 100vh;
     font-family: "Reddit Sans", sans-serif;
     scroll-behavior: smooth;
+ 
     
 }
 
@@ -135,8 +136,6 @@ dotlottie-player{
 
 /*Nav Bar CSS*/
 nav{
-    position: sticky;
-    top: 0;
     display: flex;
     width: 100%;
     background-color: hsl(210, 24%, 16%);
@@ -146,6 +145,7 @@ nav{
     padding: 0px 16px;
     z-index: 10;
     height: 60px;
+ 
     
 }
 
@@ -466,7 +466,7 @@ i.left-btn{
     nav a img{
         height: 115px;
     }
-    .sticky + .content{
+    nav.sticky + .content{
         padding-top: 120px;
     }
     .ham-btn{
