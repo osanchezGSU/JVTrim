@@ -1,3 +1,23 @@
+/* Lenis Css */
+html.lenis, html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
 
 body{
     padding: 0;
@@ -287,6 +307,7 @@ nav.sticky + .content{
     padding: 0;
     box-sizing: border-box;
     height: fit-content;
+    padding-top: 20px;
 }
 
 .service-type{
@@ -297,6 +318,7 @@ nav.sticky + .content{
     padding: 0;
     box-sizing: border-box;
     height: fit-content;
+    padding-top: 50px;
 }
 
 .service-card-container{
@@ -304,8 +326,15 @@ nav.sticky + .content{
     display: flex;
     overflow-x: scroll;
     gap: 10px;
- 
+    width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 
+}
+
+.service-card-container.dragging{
+    scroll-behavior: auto;
+    cursor: grab;
 }
 
 .service-card{
@@ -318,11 +347,7 @@ nav.sticky + .content{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 350px;
- 
-
-
-
+    
 }
 
 .service-card div h3{
@@ -336,6 +361,7 @@ nav.sticky + .content{
     font-size: 18px;
     padding-top: 0;
     margin-top: 0;
+    max-width: 75%;
 }
 .service-card > a{
     text-decoration: none;
@@ -343,6 +369,30 @@ nav.sticky + .content{
     font-size: 23px;
 }
 
+i.rigth-btn,
+i.left-btn{
+    background-color: hsl(210, 50%, 37%);
+    color: hsl(180, 100%, 40%);
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+
+i.left-btn{
+    display: none;
+}
+
+.button-container{
+    display: flex;
+    grid-column: 3 / span 2;
+    width: 100%;
+    gap: 10px;
+    justify-content: end;
+}
 
 
 
@@ -364,7 +414,25 @@ nav.sticky + .content{
         font-size: 30px;
     }
 
-     /* Nav Bar CSS */
+    .service-card{
+        min-width: calc(100% / 2);
+    }
+    .section-header{
+        font-size: 40px;
+    }
+    .service-type{
+        font-size: 45px;
+    }
+    .service-card div h3{
+        font-size: 30px;
+    }
+    .service-card div p{
+       font-size: 18px;
+    }
+    .service-card > a{
+        font-size: 22px;
+    }
+    
     
     
 }
@@ -406,6 +474,25 @@ nav.sticky + .content{
     }
     .dropdown-menu{
         display: none;
+    }
+
+    .service-card{
+        min-width: calc(100% / 3);
+    }
+    .section-header{
+        font-size: 45px;
+    }
+    .service-type{
+        font-size: 50px;
+    }
+    .service-card div h3{
+        font-size: 35px;
+    }
+    .service-card div p{
+       font-size: 20px;
+    }
+    .service-card > a{
+        font-size: 25px;
     }
     
 }
