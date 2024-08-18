@@ -26,7 +26,7 @@ body{
     height: 100vh;
     font-family: "Reddit Sans", sans-serif;
     scroll-behavior: smooth;
- 
+    overflow-x: hidden;
     
 }
 
@@ -136,6 +136,8 @@ dotlottie-player{
 
 /*Nav Bar CSS*/
 nav{
+    position: sticky;
+    top: 0;
     display: flex;
     width: 100%;
     background-color: hsl(210, 24%, 16%);
@@ -145,7 +147,6 @@ nav{
     padding: 0px 16px;
     z-index: 10;
     height: 60px;
- 
     
 }
 
@@ -310,6 +311,8 @@ nav.sticky + .content{
     padding-top: 20px;
 }
 
+/* Service Section CSS */
+
 .service-type{
     grid-column: span 4;
     color: hsl(211, 58%, 16%);
@@ -329,7 +332,12 @@ nav.sticky + .content{
     width: 100%;
     box-sizing: border-box;
     scroll-behavior: smooth;
-
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    cursor: grab;
+}
+.service-card-container::-webkit-scrollbar{
+    display: none;
 }
 
 .service-card-container.dragging{
@@ -394,11 +402,70 @@ i.left-btn{
     justify-content: end;
 }
 
+/* Why We Lead CSS */
+.advantages-container{
+    display: grid;
+    grid-column: span 4;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 100%;
+    padding-top: 50px;
+}
+
+.advantages-card{
+    background-color: hsl(214, 15%, 91%);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    font-size: 32px;
+    gap: 10px;
+    width: 100%;
+    
+}
+
+.advantages-card .icon-container{
+ color: hsl(178, 90%, 35%)
+}
+.advantages-card .text-container{
+    display: flex;
+    flex-direction: column;
+}
+.text-container h3{
+    margin: 0;
+    color: hsl(211, 58%, 16%)
+}
+
+.text-container p{
+    font-size: 18px;
+    color: hsl(210, 24%, 16%);
+    margin-top: 5px;
+}
+
+/* Gallery CSS */
+#gallery{
+    position: relative;
+}
+.wave{
+    position: absolute;
+    bottom: 0;
+    height: 50% 
+}
+
+
+
+
+
 
 
 
 /*Responsive Design for Tablets and Laptops*/
 @media (min-width: 435px) and (max-width: 1024px){
+    .grid-container{
+        padding: 0 32px
+    }
     #landing-page{
         background-size: cover;
     }
@@ -438,6 +505,15 @@ i.left-btn{
 }
 /*Repsonsive Design for Destops*/
 @media (min-width: 1025px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 0 113px;
+        box-sizing: border-box;
+        height: fit-content
+        
+    }
     #landing-page{
         background-size: cover;
     }
@@ -493,6 +569,18 @@ i.left-btn{
     }
     .service-card > a{
         font-size: 25px;
+    }
+    .advantages-container{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 50px
+    }
+    .advantages-card{
+        grid-column: span 2;
+        font-size: 35px;
+    }
+    .text-container p{
+        font-size: 20px;
+      
     }
     
 }

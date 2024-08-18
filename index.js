@@ -261,7 +261,3 @@ carousels.forEach(carousel => {
 //     });
 // });
 
-
-
-
-
