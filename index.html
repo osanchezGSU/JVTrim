@@ -160,8 +160,8 @@
     </div>
    
     <div class="button-container">
-    <i id="left" class="fa-solid fa-arrow-left left-btn"></i>
-    <i id="right" class="fa-solid fa-arrow-right rigth-btn"></i>
+    <i id="left" class="fa-solid fa-chevron-left left-btn"></i>
+    <i id="right" class="fa-solid fa-chevron-right rigth-btn"></i>
     </div>
 
     <h2 class="service-type">Custom Carpentry</h2>
@@ -220,8 +220,8 @@
     </div>
    
     <div class="button-container">
-    <i id="left" class="fa-solid fa-arrow-left left-btn"></i>
-    <i id="right" class="fa-solid fa-arrow-right rigth-btn"></i>
+    <i id="left" class="fa-solid fa-chevron-left left-btn"></i>
+    <i id="right" class="fa-solid fa-chevron-right rigth-btn"></i>
     </div>
 
    
@@ -271,28 +271,139 @@
   <section id="gallery" >
     <div class= "grid-container">
       <h1 class="section-header"> Get Inspired By Our Portfolio</h1>
-      <!-- <div class="image-carousel-container">
-        <i class="fa-solid fa-arrow-left left-btn"></i>
-        <i id="right" class="fa-solid fa-arrow-right rigth-btn"></i>
-        <img src="./images/image1.jpeg" alt="">
-      </div> -->
-      <div class="image-carousel">
-        
-
+      <div class="gallery-carousel">
+        <div class="slides">
+          <img src="./images/image1.jpeg" alt="">
+          <img src="./images/image2.jpeg" alt="">
+          <img src="./images/image3.jpeg" alt="">
+          <img src="./images/image4.jpg" alt="">
+        </div>
+        <i id="left" class="fa-solid fa-chevron-left prev"></i>
+        <i id="right" class="fa-solid fa-chevron-right next"></i>
       </div>
-
-      
-      <a href="" class="btn">Show More</a>
-
-    
+      <a href="" class="get-quote-btn btn">Show More</a>
     </div>
+ 
     <svg class="wave" viewBox="0 0 1440 232" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M0 111.538L80.4 81.423C159.6 51.3076 320.4 -8.92321 480 1.11526C639.6 11.1537 800.4 91.4615 960 121.577C1119.6 151.692 1280.4 131.615 1359.6 121.577L1440 111.538V232H1359.6C1280.4 232 1119.6 232 960 232C800.4 232 639.6 232 480 232C320.4 232 159.6 232 80.4 232H0V111.538Z" fill="#E4E7EB"/>
       </svg>
       
   </section>
-  <section id="about" ></section>
-  <section id="footer"></section>
+  <section id="contact" class= "grid-container">
+    <h1 class="section-header"> Contact</h1>
+    <h2 class="service-type">Got ideas? We’ve got the skills. Lets team up.</h2>
+    <div>
+      <div class="quote-container">
+        <p>Tell us more about yourself and what you got in mind.</p>
+        <form action="">
+          <input type="text" placeholder="Name" required>
+          <input type="text" placeholder="Phone Number" required>
+          <input type="text" placeholder="Email" required>
+          <textarea name="" id="" placeholder="Tell us a little about your project..."></textarea>
+          <button type="submit" class="btn">Lets Get Started!</button>
+        </form>
+      </div>
+      <div class="contact-info-container">
+        <div class="contact-option">
+          <i class="fa-regular fa-envelope"></i>
+          <div>
+            <div>
+              <h1 class="contact-option-title">Email Our Team</h1>
+              <p class="contact-option-description">Our friendly team is here to help.</p>
+            </div>
+            <a class="contact-option-link" href="">Contact@JVTrim.com</a>
+          </div>
+        </div>
+        <div class="contact-option">
+          <i class="fa-solid fa-phone-volume"></i>
+          <div>
+            <div>
+              <h1 class="contact-option-title">Call Us</h1>
+              <p class="contact-option-description">Mon-Fri from 8am to 5pm.</p>
+            </div>
+            <a class="contact-option-link" href="">+1 (470) 663-3510</a>
+          </div>
+        </div>
+        <div class= "contact-option social-media-container" >
+          <div>
+            <h1 class="contact-option-title">Follow Us On</h1>
+            <div class="social-media-option">
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+              <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+              <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+          </div>
+        
+         
+        </div>
+          
+      </div>
+    </div>
+
+  </section>
+  <section id="about">
+    <div class="grid-container about-content">
+      <h1 class="section-header">Get To Know Us</h1>
+      <h2 class="service-type">We’re On A Mission To Deliver Exceptional Craftsmanship With Precision And Care.</h2>
+      <p>We are proud to be a Georgia-based company specializing in premium trim work and carpentry services.</p>
+      <a href="">Learn More</a>
+      <div class="about-container">
+        <div>
+          <h1>10+</h1>
+          <p>Years Of Experience</p>
+        </div>
+        <div>
+          <h1>100+</h1>
+          <p>Successful Projects</p>
+        </div>
+        <div>
+          <h1>60+</h1>
+          <p>Satisfied Customers</p>
+        </div>
+        <div>
+          <h1>5<span style="">&#9733;</span></h1>
+          <p>On Google Reviews</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="divider"></div>
+
+
+  </section>
+  <section id="testimonials" class="grid-container">
+    <h1 class="section-header">Testimonials</h1>
+    <h2 class="service-type">See What Our Clients Have To Say</h2>
+    <div>
+      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-2ddaf3f5-fa07-48a7-9a2b-5a64623df190" data-elfsight-app-lazy></div>
+    </div>
+  </section>
+  <section id="footer" class="grid-container">
+    <div class="footer-nav">
+      <a href="#landing-page"><img src="./images/JVLogo.png" alt="" height="90px"></a>
+      <div class="footer-nav-links">
+        <a href="">Home</a>
+        <a href="" >Services</a>
+        <a href="" >Contact</a>
+        <a href="">About Us</a>
+      </div>  
+    </div>
+    <div class="contact-nav">
+      <div class="contact-container">
+        <h1>Get In Touch</h1>
+        <div>
+            <a href="">+1 (470) 663-3510</a>
+            <a href="">Contact@JVTrim.com</a>
+        </div>
+      </div>
+      <div class="social-media-nav">
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+        <a href=""><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+  </section>
 </section>
 <script
   src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -307,4 +418,3 @@
 
 </body>
 </html>
-

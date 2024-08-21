@@ -53,7 +53,14 @@ section{
     justify-content: center;
     align-items: center;
     text-decoration: none;
- 
+    box-shadow: inset 0 2px 0 hsl(182, 100%, 90%),
+    0 5px 5px hsl(0, 0%, 0%, .2);
+    transition: .3s transform ease-in-out;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /*Landing Page CSS*/
@@ -147,6 +154,7 @@ nav{
     padding: 0px 16px;
     z-index: 10;
     height: 60px;
+    box-shadow: 0 5px 5px hsl(0, 0%, 0%, .2);
     
 }
 
@@ -354,6 +362,8 @@ nav.sticky + .content{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0 2px 0 hsla(0, 0%, 100%, .15),
+    inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
     
 }
 
@@ -386,8 +396,16 @@ i.left-btn{
     text-align: center;
     border-radius: 50%;
     cursor: pointer;
+    box-shadow: inset 0 1px 0 hsl(212, 48%, 68%),
+    0 4px 5px hsl(0, 0%, 0%, .2);
+    transition: .2s transform ease-in-out;
     
 }
+i.rigth-btn:hover,
+i.left-btn:hover{
+    transform: scale(1.1);
+}
+
 
 i.left-btn{
     display: none;
@@ -422,6 +440,8 @@ i.left-btn{
     font-size: 32px;
     gap: 10px;
     width: 100%;
+    box-shadow: 0 2px 0 hsla(0, 0%, 100%, .15),
+    inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
     
 }
 
@@ -446,57 +466,366 @@ i.left-btn{
 /* Gallery CSS */
 #gallery{
     position: relative;
-    overflow: hidden;
+    height:fit-content;
+    overflow-x: hidden;
+    padding-bottom: 50px;
 }
+
 
 .wave{
     position: absolute;
     bottom: 0;
     height: 50%; 
     z-index: -1;
-    transform: translateX(-25%);
+    transform: translateX(-400px);
+ 
 }
 #gallery .grid-container h1{
     grid-column: span 4;
 }
-#carouselExampleAutoplaying{
+
+.gallery-carousel{
+    margin-top: 50px;
     grid-column: span 4;
     position: relative;
-    margin-top: 50px;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
+    
 
-i.carousel-control-prev, 
-i.carousel-control-next { 
-    background-color: hsl(210, 50%, 37%);
-    color: hsl(180, 100%, 40%);
-    width: 40px;
-    height:40px;
-    line-height: 40px;
-    border-radius: 50%;
-    box-sizing: border-box;
+}
+.gallery-carousel div.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: inset 0 2px 0 hsl(0, 0%, 100%),
+    0 4px 5px hsl(0, 0%, 0%, .2);
+
+
+}
+.slides img{
+    width: 100%;
+    border-radius: 20px;
+
+    
+}
+i.prev,
+i.next{
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: hsl(210, 50%, 37%);
+    text-align: center;
+    border-radius: 50%;
+    color: hsl(180, 100%, 40%);
+    opacity: .5;
     cursor: pointer;
+    transition: .5s opacity;
+    font-size: 25px;
+    box-shadow: inset 0 1px 0 hsl(212, 48%, 68%),
+    0 4px 5px hsl(0, 0%, 0%, .2);
+}
+i.next{   
+right: 0;
+transform: translateX(25%);
+}
+i.prev{
+    transform: translateX(-25%);
+}
+
+i.prev:hover,
+i.next:hover{
     opacity: 1;
+    
 }
 
-i.carousel-control-prev{
-    transform: translateX(-30%);
-}
-
-i.carousel-control-next{
-    transform: translateX(30%);
-}
-.carousel-item img{
-    height:300px;
-    border-radius: 20px;
-}
 #gallery .grid-container a{
-    grid-column: span 4;
+   grid-column: span 4;
+   height: 50px;
+   text-align: center;
+   
 }
 
+/* Contact Section CSS */
+#contact{
+    background-color: hsl(214, 15%, 91%);
+    min-height: 100vh;
+}
+#contact .service-type{
+    margin: 0;
+    padding: 0;
+}
+
+#contact > div{
+    grid-column: span 4;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.quote-container{
+    background-color: hsl(211, 58%, 16%);
+    grid-column: span 4;
+    border-radius: 10px;
+    color: hsl(216, 69%, 95%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    margin-top: 50px;
+    font-size: 18px;
+    grid-column: span 4;
+    box-shadow: inset 0 2px 0 hsl(212, 46%, 42%),
+    0 4px 5px hsl(0, 0%, 0%, .2);
+}
+
+#contact form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+#contact p{
+    margin-top: 0;
+}
+#contact input, #contact textarea{
+    height: 50px;
+    border-radius: 10px;
+    padding: 0px 10px;
+    font-size: 15px;
+    font-family: "Reddit Sans", sans-serif;
+ 
+}
+#contact textarea{
+    height: 100px;
+    padding: 10px;
+}
+
+#contact button{
+    font-size: 30px;
+    padding: 10px;
+
+}
+
+.contact-info-container{
+    background-color: hsl(213, 69%, 95%);
+    gap: 20px;
+    padding: 30px 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    grid-column: span 4;
+    box-shadow: inset 0 2px 0 hsl(0, 0%, 100%),
+    0 4px 5px hsl(0, 0%, 0%, .2);
+
+}
+.contact-option{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: hsl(214, 15%, 91%);
+    padding: 20px;
+    border-radius: 10px;
+    gap: 10px;
+    box-shadow: 0 2px 0 hsla(0, 0%, 100%, .15),
+    inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
+}
+
+.contact-option i{
+  font-size: 30px;
+  padding-top: 5px;
+  color: hsl(180, 100%, 40%)
+
+}
+
+.contact-option > div{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 20px
+    
+}
+.contact-option-title{
+    margin: 0;
+    font-size: 30px;
+    color: hsl(211, 58%, 16%);
+
+}
+.contact-option-description{
+    font-size: 18px;
+    color: hsl(210, 24%, 16%);
+}
+
+.contact-option-link{
+    text-decoration: none;
+    color: hsl(211, 58%, 16%);
+    font-size: 22px;
+}
+
+.social-media-option{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  
+}
+.social-media-container{
+    grid-template-columns: 1fr;
+}
+.social-media-container > div{
+    gap: 40px;
+}
+
+/* About Section CSS */
+#about{
+    background-color: hsl(214, 15%, 91%);
+    position: relative;
+    height: fit-content;
+}
+#about .divider{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: hsl(216, 33%, 97%);
+    height: 30%
+}
+.about-content *{
+    z-index: 2;
+}
+
+#about .service-type{
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+#about .section-header{
+    padding: 0;
+    margin: 0;
+}
+#about div p {
+    grid-column: span 3;
+    font-size: 18px;
+    color: hsl(210, 24%, 16%);
+}
+#about div a{
+    grid-column: 1;
+    font-size: 25px;
+    color: hsl(178, 90%, 35%);
+    text-decoration: none;
+    grid-column: span 2;
+}
+.about-container{
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px
+}
+.about-container div{
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    background-color: hsl(211, 13%, 65%);
+    gap: 10px;
+    border-radius: 10px;
+    margin-top: 50px;
+    box-shadow: inset 0px 2px 0 hsl(210, 16%, 82%),
+    4px 4px 5px hsl(0, 0%, 0%, .2);
+}
+
+.about-container div h1{
+    font-size: 36px;
+    margin: 0;
+    color: hsl(216, 33%, 97%)
+}
+.about-container div p{
+    color: hsl(210, 24%, 16%);
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+
+}
+
+/* Testimonials Section CSS */
+#testimonials{
+    background-color:hsl(216, 33%, 97%);
+    padding-bottom: 100px;
+}
+
+#testimonials .service-type{
+    padding: 0;
+    margin: 0;
+}
+#testimonials > div{
+    grid-column: span 4;
+    margin-top: 50px;
+}
+
+/* Footer Section CSS */
+#footer{
+     background-color: hsl(210, 24%, 16%); 
+     padding-bottom: 50px;
+    
+}
+.footer-nav{
+    display: flex;
+    flex-direction: column;
+    
+  
+}
+.footer-nav-links{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.footer-nav-links a{
+    text-decoration: none;
+    font-size: 30px;
+    color: hsl(213, 69%, 95%);
+}
+.contact-nav{
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+.contact-container h1{
+    font-size: 28px;
+    color: hsl(213, 69%, 95%);
+    font-weight: 400;
+    opacity: .6;
+}
+.contact-container > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.contact-container > div > a{
+    font-size: 30px;
+    text-decoration: none;
+    color: hsl(216, 33%, 97%)
+}
+.social-media-nav{
+    display: flex;
+    gap: 25px;
+}
+.social-media-nav a{
+    font-size: 30px;
+
+}
+
+input,
+textarea {
+    box-shadow: inset 0 3px 4px hsl(0, 0%, 0%, .5),
+    0 2px 0 hsl(0, 0%, 100%, .15)
+}
 
 
 
@@ -544,6 +873,35 @@ i.carousel-control-next{
     }
     .service-card > a{
         font-size: 22px;
+    }
+    /* .footer-nav{
+        flex-direction: row;
+        grid-column: span 4;
+        gap: 100px;
+    }
+    .footer-nav-links{
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .contact-nav{
+        grid-column: span 4;
+        flex-direction: row;
+        align-items: end;
+        justify-content: space-between;
+    } */
+    
+    .gallery-carousel, 
+    #gallery .grid-container a{
+        grid-column: 2 /  span 2;
+    }
+    i.next{   
+        right: 0;
+        transform: translateX(50%);
+    }
+    i.prev{
+        transform: translateX(-50%);
     }
     
     
@@ -630,6 +988,59 @@ i.carousel-control-next{
         font-size: 20px;
       
     }
+    .gallery-carousel, 
+    #gallery .grid-container a{
+        grid-column: 2 /  span 2;
+    }
+    i.next{   
+        right: 0;
+        transform: translateX(50%);
+    }
+    i.prev{
+        transform: translateX(-50%);
+    }
+    #contact > div{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-info-container, 
+    .quote-container{
+        grid-column: span 2;
+        margin: 0;
+    }
+    .quote-container{
+        grid-column: 3 / span 2;
+        order: 2;
+    }
+    .contact-info-container{
+        grid-column: 1 / span 2;
+        order: 1;
+    }
+    .about-container div{
+        grid-column: span 1;
+    }
+    #about .divider{
+        height: 15%
+    }
+    .footer-nav{
+        flex-direction: row;
+        grid-column: span 4;
+        gap: 100px;
+    }
+    .footer-nav-links{
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .contact-nav{
+        grid-column: span 4;
+        flex-direction: row;
+        align-items: end;
+        justify-content: space-between;
+    }
+  
     
 }
 

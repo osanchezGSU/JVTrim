@@ -201,63 +201,43 @@ carousels.forEach(carousel => {
 
 /* Scroll Animation */
 
-// const lenis = new Lenis()
+const lenis = new Lenis()
 
-// lenis.on('scroll', (e) => {
-//   console.log(e)
-// })
+lenis.on('scroll', (e) => {
+  console.log(e)
+})
 
-// lenis.on('scroll', ScrollTrigger.update)
+lenis.on('scroll', ScrollTrigger.update)
 
-// gsap.ticker.add((time)=>{
-//   lenis.raf(time * 1000)
-// })
+gsap.ticker.add((time)=>{
+  lenis.raf(time * 1000)
+})
 
-// gsap.ticker.lagSmoothing(0)
+gsap.ticker.lagSmoothing(0)
 
-// const content = document.querySelector(".content");
-// const sections = content.querySelectorAll("section");
-// const serviceSection = content.querySelectorAll("#services");
+const content = document.querySelector(".content");
+const sections = content.querySelectorAll("section");
+const serviceSection = content.querySelectorAll("#services");
 
-// sections.forEach(section => {
-//     let sectionTitle = section.querySelectorAll(".section-header");
+sections.forEach(section => {
+    let sectionTitle = section.querySelectorAll(".section-header");
     
 
-//     gsap.set(sectionTitle, {
-//         xPercent: -100,
-//         opacity: 0
+    gsap.set(sectionTitle, {
+        yPercent: -100,
+        opacity: 0
         
-//     })
-//     gsap.to(sectionTitle, {
-//         scrollTrigger: {
-//             trigger: sectionTitle,
-//             start: 'top 75%',
-//             end: 'bottom 50%',
-//             markers: true,
-//             scrub: true
-//         },
-//         xPercent: 0,
-//         opacity: 1
-//     })
-// } );
-// let serviceTypes = serviceSection.querySelectorAll(".service-type");
-
-// serviceTypes.forEach(serviceType => {
-//     gsap.set(serviceType, {
-//         xPercent: 100,
-//         opacity: 0
-//     });
-    
-//     gsap.to(serviceType, {
-//         scrollTrigger: {
-//             trigger: serviceType,
-//             start: 'top 75%',
-//             end: '110% 75%',
-//             markers: true,
-//             scrub: true
-//         },
-//         xPercent: 0,
-//         opacity: 1
-//     });
-// });
+    })
+    gsap.to(sectionTitle, {
+        scrollTrigger: {
+            trigger: sectionTitle,
+            start: 'top 75%',
+            end: 'bottom 50%',
+            markers: false,
+            scrub: true
+        },
+        yPercent: 0,
+        opacity: 1
+    })
+} );
 
