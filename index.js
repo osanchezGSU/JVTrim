@@ -257,7 +257,7 @@ const tl = gsap.timeline({
 
 tl.to(backgroundImage, {
     y: 20 * bgSpeed,
-    duration: 10
+    duration: 2
 })
 tl.to(landingPageContent, {
     y: 20 * pcSpeed,
