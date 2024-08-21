@@ -67,7 +67,7 @@ section{
 
 #landing-page{
     background-image: url(./images/home-image.jpg);
-    object-fit: cover;
+    object-fit: contain;
     background-repeat: no-repeat;
     background-attachment:fixed;
     background-position: center;
