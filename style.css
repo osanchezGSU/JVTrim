@@ -69,10 +69,9 @@ section{
     background-image: url('images/home-image.jpg');
    
     object-fit: contain;
-    /* background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-attachment:fixed;
     background-position: center;
-   
     background-size: contain;
     position: relative; */
      /* background-size: 100% 100%; */
