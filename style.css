@@ -84,6 +84,7 @@ section{
     object-fit: cover;
     background-size: cover;
     z-index: -2;
+    background-repeat: no-repeat;
     
 }
 #landing-page::before{
