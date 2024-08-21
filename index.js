@@ -241,3 +241,25 @@ sections.forEach(section => {
     })
 } );
 
+const backgroundImage = document.querySelector(".background-image");
+const bgSpeed = backgroundImage.getAttribute('data-speed');
+const landingPage = document.getElementById("landing-page");
+const landingPageContent = document.querySelector(".logo-container");
+const pcSpeed = landingPageContent.getAttribute('data-speed');
+const tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: landingPage,
+        start: 'top top',
+        scrub: true,
+        markers: true
+    }
+});
+
+tl.to(backgroundImage, {
+    y: 20 * bgSpeed,
+    duration: 10
+})
+tl.to(landingPageContent, {
+    y: 20 * pcSpeed,
+    duration: 2
+})

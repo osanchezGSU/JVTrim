@@ -66,16 +66,24 @@ section{
 /*Landing Page CSS*/
 
 #landing-page{
-    background-image: url('images/home-image.jpg');
-    object-fit: cover;
-    background-repeat: no-repeat;
-     /* background-attachment:fixed; */
-    background-position: center;
-    background-size: cover;
-    position: relative; */
+    position: relative;
      /* background-size: 100% 100%; */
+     height: 100vh;
+     overflow: hidden;
+    
+}
 
-   
+.background-image{
+    background-image: url(./images/home-image.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    object-fit: cover;
+    background-size: cover;
+    z-index: -2;
     
 }
 #landing-page::before{
@@ -88,7 +96,7 @@ section{
     background: hsl(210, 56%, 30%, 0.5);
     opacity: 0;/*Change to 0 for loading animation*/
     transition: opacity 1s ease-in-out;
-    z-index: 1;
+    z-index: -1;
 }
 
 #landing-page.animate::before {
@@ -105,6 +113,7 @@ section{
     height: 100%;
     justify-content: center;
     text-align: center;
+    z-index: 2;
     
 }
 .logo-container > *{
