@@ -25,89 +25,16 @@ $(".ham-btn").on('click', function(){
     $(".dropdown-menu").toggleClass("open");
 });
 
-/* Service Card Carousel */
-// const carousel = document.querySelectorAll(".service-card-container")[0];
-// const carouselCustomCarpentry = document.querySelectorAll(".service-card-container")[1];
-// const arrowsIcons = document.querySelectorAll(".button-container i");
-// const firstCard = carousel.querySelectorAll("div")[0];
-
-// let isDragStart = false, prevPageX, prevScrollLeft, positionDiff;
-// let firstCardWidth = firstCard.clientWidth + 10;
-// let scrollWidth = carousel.scrollWidth - carousel.clientWidth;
-
-// const showHideIcons = () => {
-//     arrowsIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
-//     arrowsIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
-// }
-
-// arrowsIcons.forEach(icon => {
-//     icon.addEventListener("click", () => {
-//         carousel.scrollLeft += icon.id == "left" ? -firstCardWidth : firstCardWidth;
-//         setTimeout(() => showHideIcons(), 60);
-//     });
-// });
-
-// const autoSlide = (carousel) => {
-//     if(carousel.scrollLeft == (carousel.scrollWidth - carousel.clientWidth)) return;
-//     positionDiff = Math.abs(positionDiff);
-//     let firstCardWidth = firstCard.clientWidth + 10;
-//     let valDifference = firstCardWidth - positionDiff;
-
-//     if(carousel.scrollLeft > prevScrollLeft){
-//         return carousel.scrollLeft += positionDiff > firstCardWidth / 3 ? valDifference: -positionDiff
-//     }
-//     carousel.scrollLeft -= positionDiff > firstCardWidth / 3 ? valDifference: -positionDiff
-// }
-
-// const dragStart = (carousel) => (e) => {
-//     isDragStart = true;
-//     prevPageX = e.pageX || e.touches[0].pageX;
-//     prevScrollLeft = carousel.scrollLeft;
-// }
-
-
-
-// const dragging = (carousel) => (e) => {
-//     if (!isDragStart) return; // If not dragging, exit function
-//     e.preventDefault();
-//     carousel.classList.add("dragging");
-//     positionDiff = (e.pageX  || e.touches[0].pageX)- prevPageX;
-//     carousel.scrollLeft = prevScrollLeft - positionDiff;
-//     showHideIcons();
-// }
-
-// const dragStop = (carousel) => {
-//     isDragStart = false;
-//     carousel.classList.remove("dragging");
-//     autoSlide();
-// }
-
-// autoSlide(carousel);
-// autoSlide(carouselCustomCarpentry);
-
-// carousel.addEventListener("mousedown", dragStart(carousel));
-// carousel.addEventListener("touchstart", dragStart(carousel));
-// carousel.addEventListener("mousedown", dragStart(carouselCustomCarpentry));
-// carousel.addEventListener("touchstart", dragStart(carouselCustomCarpentry));
-
-// carousel.addEventListener("mousemove", dragging(carousel));
-// carousel.addEventListener("touchmove", dragging(carousel));
-// carousel.addEventListener("mousemove", dragging(carouselCustomCarpentry));
-// carousel.addEventListener("touchmove", dragging(carouselCustomCarpentry));
-
-// carousel.addEventListener("mouseup", dragStop(carousel));
-// carousel.addEventListener("touchend", dragStop(carousel));
-// carousel.addEventListener("mouseleave", dragStop(carousel));
-// carousel.addEventListener("mouseup", dragStop(carouselCustomCarpentry));
-// carousel.addEventListener("touchend", dragStop(carouselCustomCarpentry));
-// carousel.addEventListener("mouseleave", dragStop(carouselCustomCarpentry));
-
+/* Service Carousel */
+/* Gallery Carousel */
 const carousels = document.querySelectorAll(".service-card-container");
-const arrowsIcons = document.querySelectorAll(".button-container i");
+const arrowsIcons = document.querySelectorAll(".carousel-btn");
 
 let isDragStart = false;
 let prevPageX, prevScrollLeft, positionDiff;
-const firstCardWidth = carousels[0].querySelector("div").clientWidth + 10;
+const firstCardWidth = carousels[0].querySelector(".service-card").clientWidth + 10;
+const imgWidth = carousels[2].querySelector("img").clientWidth;
+
 
 const showHideIcons = (carousel) => {
     const scrollWidth = carousel.scrollWidth - carousel.clientWidth;
@@ -118,6 +45,10 @@ const showHideIcons = (carousel) => {
     else if(carousel == carousels[1]){
         arrowsIcons[2].style.display = carousel.scrollLeft === 0 ? "none" : "block";
         arrowsIcons[3].style.display = carousel.scrollLeft === scrollWidth ? "none" : "block";
+    }
+    else if(carousel == carousels[2]){
+        arrowsIcons[4].style.display = carousel.scrollLeft === 0 ? "none" : "block";
+        arrowsIcons[5].style.display = carousel.scrollLeft === scrollWidth ? "none" : "block";
     }
 };
 
@@ -141,6 +72,15 @@ arrowsIcons.forEach(icon => {
             carousels[1].scrollLeft += firstCardWidth;
             carousel = carousels[1];
         }
+        else if(icon == arrowsIcons[4]){
+            carousels[2].scrollLeft += -imgWidth;
+            carousel = carousels[2];
+        }
+        else if(icon == arrowsIcons[5]){
+            carousels[2].scrollLeft += imgWidth;
+            carousel = carousels[2];
+        }
+
 
         setTimeout(() => showHideIcons(carousel), 60);
     });
@@ -151,12 +91,12 @@ const autoSlide = (carousel) => {
     const scrollWidth = carousel.scrollWidth - carousel.clientWidth;
     if (carousel.scrollLeft === scrollWidth) return;
     positionDiff = Math.abs(positionDiff);
-    const valDifference = firstCardWidth - positionDiff;
+    const valDifference = (carousel == carousels[2] ? imgWidth : firstCardWidth) - positionDiff;
 
     if (carousel.scrollLeft > prevScrollLeft) {
-        carousel.scrollLeft += positionDiff > firstCardWidth / 3 ? valDifference : -positionDiff;
+        carousel.scrollLeft += positionDiff > firstCardWidth / 2 ? valDifference : -positionDiff;
     } else {
-        carousel.scrollLeft -= positionDiff > firstCardWidth / 3 ? valDifference : -positionDiff;
+        carousel.scrollLeft -= positionDiff > firstCardWidth / 2 ? valDifference : -positionDiff;
     }
     showHideIcons(carousel);
 };
@@ -197,6 +137,10 @@ carousels.forEach(carousel => {
 carousels.forEach(carousel => {
     showHideIcons(carousel);
 });
+
+
+
+
 
 
 /* Scroll Animation */
