@@ -195,7 +195,7 @@ const tl = gsap.timeline({
         trigger: landingPage,
         start: 'top top',
         scrub: true,
-        markers: true
+        markers: false
     }
 });
 
