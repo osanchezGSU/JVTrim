@@ -490,6 +490,7 @@ i.left-btn{
     height: 50%; 
     z-index: -1;
     transform: translateX(-400px);
+    fill: hsl(214, 15%, 91%);
  
 }
 #gallery .grid-container h1{
