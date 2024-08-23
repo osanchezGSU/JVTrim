@@ -843,7 +843,12 @@ i.next:hover{
     display: flex;
     gap: 25px;
 }
-
+.social-media-nav .tool-tip i{
+    font-size: 30px;
+}
+.social-media-nav .tool-tip a{
+    height: 50px
+}
 
 input,
 textarea {
@@ -859,7 +864,7 @@ textarea {
     align-items: center;
     position: relative;
 }
-.tool-tip span{
+.tool-tip a{
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -867,7 +872,7 @@ textarea {
     cursor: pointer;
     z-index: 2;
 }
-.instagram span, .instagram p{
+.instagram a, .instagram p{
     background: linear-gradient(to right bottom, #f9ce34, #ee2a7b, #6228d7);
 }
 .instagram p::before{
@@ -875,14 +880,14 @@ textarea {
     z-index: -3;
 }
 
-.facebook span, .facebook p, .facebook p::before {
+.facebook a, .facebook p, .facebook p::before {
     background-color: #1778F2;
 }
-.tiktok span, .tiktok p, .tiktok p::before{
+.tiktok a, .tiktok p, .tiktok p::before{
     background-color: black;
 
 }
-.tool-tip span i{
+.tool-tip a i{
     line-height: 50px;
 
     color: hsl(214, 15%, 91%);
@@ -914,7 +919,7 @@ textarea {
 
 }
 
-.tool-tip span, .tool-tip p{
+.tool-tip a, .tool-tip p{
     box-shadow: inset 0 1px 0 hsl(0, 0%, 1000%),
     0 5px 5px hsl(0, 0%, 0%, .1);
 }
