@@ -13,9 +13,11 @@ $(window).scroll(function(){
     if (window.scrollY >= sticky) {
         $("nav").addClass("sticky")
         $(".dropdown-menu").addClass("sticky")
+        $("#modal").addClass("sticky")
       } else {
         $("nav").removeClass("sticky");
         $(".dropdown-menu").removeClass("sticky")
+        $("#modal").removeClass("sticky")
       };
 })
 
@@ -24,6 +26,15 @@ $(".ham-btn").on('click', function(){
     $(".ham-btn").toggleClass("active");
     $(".dropdown-menu").toggleClass("open");
 });
+
+const dropdownMenu = document.querySelector('.dropdown-menu');
+const navLinks = dropdownMenu.querySelectorAll('a');
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        $(".ham-btn").toggleClass("active");
+        $(".dropdown-menu").toggleClass("open");
+    })
+})
 
 /* Service Carousel */
 /* Gallery Carousel */
@@ -138,7 +149,34 @@ carousels.forEach(carousel => {
     showHideIcons(carousel);
 });
 
-// Empty
+// Form Submission Modal
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(this);
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Show the modal on success
+            document.getElementById('modal').classList.add('open');
+        } else {
+            alert('There was an issue with your submission. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error submitting the form.');
+    });
+});
+
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('modal').classList.remove("open");
+});
 
 
 
@@ -208,4 +246,4 @@ tl.to(backgroundImage, {
 tl.to(landingPageContent, {
     y: 20 * pcSpeed,
     duration: 2
-})
+});

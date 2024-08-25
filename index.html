@@ -36,12 +36,12 @@
   <a href="#landing-page"><img src="./images/JVLogo.png" alt="" ></a>
  
   <ul>
-    <a href="" class="active">Home</a>
-    <a href="" >Services</a>
-    <a href="" >Contact</a>
-    <a href="">About Us</a>
+    <a href="#landing-page" class="active">Home</a>
+    <a href="#services" >Services</a>
+    <a href="#contact" >Contact</a>
+    <a href="#about">About Us</a>
   </ul>  
-  <a href="" class="get-quote-btn btn">Get Quote</a>
+  <a href="#quote-container" class="get-quote-btn btn">Get Quote</a>
   
   <div class="ham-btn">
     <div></div>
@@ -54,12 +54,20 @@
 <section class="content">
   <div class="dropdown-menu">
     <ul>
-      <a href="" class="active">Home</a>
-      <a href="">Services</a>
-      <a href="">Contact</a>
-      <a href="">About Us</a>
+      <a href="#landing-page" class="active">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About Us</a>
     </ul>  
-    <a href="" class="get-quote-btn btn">Get Quote</a>
+    <a href="#quote-container" class="get-quote-btn btn">Get Quote</a>
+  </div>
+  <div id="modal" class="">
+    <div class="modal-content">
+      <span><i class="fa-solid fa-check"></i></span>
+    <h1>Submission Successful</h1>
+    <p>Thank you for reaching out! We’ll be in touch with you shortly.</p>
+    <a id="closeModal">Close</a>
+    </div>
   </div>
   <section id="services"  class="grid-container">
     <h1 class="section-header"> What We Have To Offer</h1>
@@ -282,13 +290,15 @@
         <div class="slides service-card-container">
           <img src="./images/image1.jpeg" alt="">
           <img src="./images/image2.jpeg" alt="">
+          <img src="./images/interior-trim-image.jpg" alt="">
           <img src="./images/image3.jpeg" alt="">
           <img src="./images/image4.jpg" alt="">
+          <img src="./images/image9.jpg" alt="">
         </div>
         <i id="left" class="fa-solid fa-chevron-left prev carousel-btn"></i>
         <i id="right" class="fa-solid fa-chevron-right next carousel-btn"></i>
       </div>
-      <a href="" class="get-quote-btn btn">Show More</a>
+      <a href="" class="learn-more-btn get-quote-btn btn">Show More</a>
     </div>
  
     <svg class="wave" viewBox="0 0 1440 232" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -299,10 +309,10 @@
   <section id="contact" class= "grid-container">
     <h1 class="section-header"> Contact</h1>
     <h2 class="service-type">Got ideas? We’ve got the skills. Lets team up.</h2>
-    <div>
-      <div class="quote-container">
+    <div id="quote-container">
+      <div  class="quote-container">
         <p>Tell us more about yourself and what you got in mind.</p>
-        <form action="https://api.web3forms.com/submit" method="POST">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="c83395a0-25e0-4dc8-9db0-5d3124c15252">
           <input type="text" name="name" placeholder="Name" required>
           <input type="tel" name="phoneNumber"  placeholder="Phone Number" required>
@@ -368,7 +378,7 @@
       <h1 class="section-header">Get To Know Us</h1>
       <h2 class="service-type">We’re On A Mission To Deliver Exceptional Craftsmanship With Precision And Care.</h2>
       <p>We are proud to be a Georgia-based company specializing in premium trim work and carpentry services.</p>
-      <a href="">Learn More</a>
+      <a href="" class="learn-more-btn">Learn More</a>
       <div class="about-container">
         <div>
           <h1>10+</h1>
@@ -405,10 +415,10 @@
     <div class="footer-nav">
       <a href="#landing-page"><img src="./images/JVLogo.png" alt="" height="90px"></a>
       <div class="footer-nav-links">
-        <a href="">Home</a>
-        <a href="" >Services</a>
-        <a href="" >Contact</a>
-        <a href="">About Us</a>
+        <a href="#landing-page">Home</a>
+        <a href="#services" >Services</a>
+        <a href="#contact" >Contact</a>
+        <a href="#about">About Us</a>
       </div>  
     </div>
     <div class="contact-nav">
