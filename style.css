@@ -489,7 +489,7 @@ i.left-btn{
 #gallery{
     position: relative;
     height:fit-content;
-    overflow-x: hidden;
+    overflow: hidden;
     padding-bottom: 50px;
     -webkit-user-drag: none;
 	-moz-user-select: none;
