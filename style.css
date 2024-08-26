@@ -514,7 +514,7 @@ i.left-btn{
     margin-top: 50px;
     grid-column: span 4;
     position: relative;
-    z-index: 1;
+ 
     background-color: transparent;
     
 
@@ -581,7 +581,7 @@ i.next:hover{
    grid-column: span 4;
    height: 50px;
    text-align: center;
-   z-index: 1;
+
    
 }
 
