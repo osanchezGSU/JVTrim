@@ -491,6 +491,8 @@ i.left-btn{
     height:fit-content;
     overflow-x: hidden;
     padding-bottom: 50px;
+    -webkit-user-drag: none;
+	-moz-user-select: none;
 }
 
 
@@ -501,8 +503,7 @@ i.left-btn{
     z-index: -1;
     transform: translateX(-400px);
     fill: hsl(214, 15%, 91%);
-    -webkit-user-drag: none;
-	-moz-user-select: none;
+   
  
 }
 #gallery .grid-container h1{
