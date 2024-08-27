@@ -197,7 +197,7 @@ nav ul > a{
     font-size: 32px;
     height: 100%;
     opacity: .65;
-    transition: .3s opacity ease-in-out;
+    transition: .3s opacity ease-in-out, .3s border-bottom ease-in-out;
 
 }
 nav a.active{
