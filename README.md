@@ -18,7 +18,7 @@ The following **required** functionality is completed:
 ## Video Walkthrough
 
 Here's a walkthrough:
-
+https://github.com/user-attachments/assets/5810cc3b-0dde-4e66-bdde-e8c5d7647c55
 
 <!-- Replace this with whatever GIF tool you used! -->
 
