@@ -193,15 +193,22 @@ nav ul > a{
     align-items: center;
     text-decoration: none;
     width: 150px;
-    color: hsl(210, 15%, 82%);
+    color: hsl(216, 33%, 97%);
     font-size: 32px;
     height: 100%;
+    opacity: .65;
 
 }
 nav a.active{
     color: hsl(216, 33%, 97%);
     border-bottom: 5px solid hsl(216, 33%, 97%);
+    opacity: 1;
 
+}
+nav a:hover:not(.active){
+    color: hsl(216, 33%, 97%);
+
+    opacity: .90;
 }
 nav .btn{
   width: 172px;

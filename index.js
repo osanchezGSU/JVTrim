@@ -8,6 +8,12 @@ $(window).on("load", function(){
 
 /* Apply Fixed Position to NavBar */
 var sticky = $("nav").offset().top;
+var servicesContainer = $("#services").offset().top - 120;
+var contactContainer = $("#contact").offset().top - 120;
+var aboutContainer = $("#about").offset().top - 120;
+var navbarLinks = document.querySelectorAll("#navbarList a");
+
+
 
 $(window).scroll(function(){
     if (window.scrollY >= sticky) {
@@ -19,6 +25,31 @@ $(window).scroll(function(){
         $(".dropdown-menu").removeClass("sticky")
         $("#modal").removeClass("sticky")
       };
+    
+      if (window.scrollY >= aboutContainer){
+        navbarLinks.forEach(link =>{
+            link.classList.remove("active");
+        });
+        $("#about-nav").addClass("active");
+      }
+      else if(window.scrollY >= contactContainer){
+        navbarLinks.forEach(link =>{
+            link.classList.remove("active");
+        });
+        $("#contact-nav").addClass("active");
+      }
+      else if(window.scrollY >= servicesContainer){
+        navbarLinks.forEach(link =>{
+            link.classList.remove("active");
+        });
+        $("#services-nav").addClass("active");
+      }
+      else if(window.scrollY < servicesContainer){
+        navbarLinks.forEach(link =>{
+            link.classList.remove("active");
+        });
+        $("#landing-page-nav").addClass("active");
+      }
 })
 
 /* Menu Button Animation */
@@ -247,3 +278,4 @@ tl.to(landingPageContent, {
     y: 20 * pcSpeed,
     duration: 2
 });
+
